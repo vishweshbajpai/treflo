@@ -8,8 +8,8 @@ import { addModalContent, toggleCart } from "../actions";
 
 const useStyles = makeStyles({
   root: {
-    height: "500px",
-    width: "400px",
+    height: "450px",
+    width: "350px",
     borderRadius: "15px",
     position: "relative",
     backgroundColor: "white",
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
   image: {
     maxHeight: "50%",
-    width: "400px",
+    width: "inherit",
     borderRadius: "15px 15px 0 0",
   },
   veg: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
   price: {
     position: "absolute",
-    top: "200px",
+    top: "180px",
     left: "20px",
     color: "white",
     fontWeight: "bold",
