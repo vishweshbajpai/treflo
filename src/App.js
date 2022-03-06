@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { fetchedData, setLoading } from "./actions";
 import "./App.css";
 import Layout from "./components/Layout";
-import Cart from "./pages/Cart";
-import Main from "./pages/Main";
+import LoadingSpinner from "./components/LoadingSpinner";
+
+const Main = lazy(() => import("./pages/Main"));
+const Cart = lazy(() => import("./pages/Cart"));
 
 function App() {
   const dispatch = useDispatch();
@@ -34,10 +36,12 @@ function App() {
 
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-      </Routes>
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+        </Routes>
+      </Suspense>
     </Layout>
   );
 }

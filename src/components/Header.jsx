@@ -3,6 +3,7 @@ import React from "react";
 import PizzaImg from "../assets/PizzaImg.png";
 import CartImg from "../assets/CartImg.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   root: {
@@ -50,6 +51,9 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
+  const cartList = useSelector((state) => state.cartList);
+  let cartListLength = cartList.length;
+
   return (
     <div className={classes.root}>
       <Link to={"/"} className={classes.header}>
@@ -58,7 +62,7 @@ const Header = () => {
       </Link>
       <Link to={"/cart"} className={classes.cart}>
         <img src={CartImg} alt="cart" className={classes.cartIcon} />
-        Cart
+        Cart {cartListLength > 0 && `(${cartListLength})`}
       </Link>
     </div>
   );

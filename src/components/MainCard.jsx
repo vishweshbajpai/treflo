@@ -91,7 +91,7 @@ const useStyles = makeStyles({
     },
   },
 });
-const Card = ({
+const MainCard = ({
   id,
   name,
   description,
@@ -147,4 +147,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default MainCard;

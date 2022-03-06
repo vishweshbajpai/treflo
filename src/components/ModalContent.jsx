@@ -1,4 +1,3 @@
-// import { Modal } from "@mui/material";
 import {
   Checkbox,
   FormControl,
@@ -9,7 +8,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, toggleCart } from "../actions";
 import Modal from "./Modal";
@@ -18,6 +17,14 @@ const useStyles = makeStyles({
   modalContentWrapper: {
     display: "flex",
     flexDirection: "column",
+  },
+  heading: {
+    fontSize: "30px",
+    fontWeight: "bold",
+    marginBottom: "20px",
+    textAlign: "center",
+    borderBottom: "1px solid black",
+    paddingBottom: "10px",
   },
   bottomWrapper: {
     display: "flex",
@@ -48,10 +55,11 @@ const useStyles = makeStyles({
     },
   },
   quantity: {
-    fontSize: "18px",
-    color: "black",
+    fontSize: "20px",
   },
 });
+
+let cartListId = 101;
 
 const ModalContent = (props) => {
   const classes = useStyles();
@@ -67,8 +75,8 @@ const ModalContent = (props) => {
     sizeList,
     toppingsList,
   } = modalContent;
-  const [quantity, setQuantity] = useState("1");
 
+  let quantity = 1;
   let toppings = [];
   let size = sizeList[0].size;
 
@@ -76,6 +84,7 @@ const ModalContent = (props) => {
     dispatch(toggleCart());
     dispatch(
       addToCart({
+        id: cartListId++,
         name,
         description,
         isVeg,
@@ -94,7 +103,7 @@ const ModalContent = (props) => {
     if (checked) {
       toppings.push(name);
     } else {
-      toppings.splice(toppings.indexOf(name), 1);
+      toppings.filter((item) => item !== name);
     }
   };
 
@@ -105,10 +114,11 @@ const ModalContent = (props) => {
   return (
     <Modal onCloseCart={props.onCloseCart}>
       <div className={classes.modalContentWrapper}>
+        <div className={classes.heading}>Add-On</div>
         <FormControl>
           <FormLabel
             id="demo-row-radio-buttons-group-label"
-            sx={{ color: "black", fontSize: "18px" }}
+            sx={{ color: "black", fontSize: "20px" }}
           >
             Choose size :
           </FormLabel>
@@ -133,7 +143,11 @@ const ModalContent = (props) => {
         <FormControl>
           <FormLabel
             component="legend"
-            sx={{ color: "black", marginTop: "20px", fontSize: "18px" }}
+            sx={{
+              color: "black",
+              marginTop: "20px",
+              fontSize: "20px",
+            }}
           >
             Choose topping(s) :
           </FormLabel>
@@ -158,7 +172,9 @@ const ModalContent = (props) => {
               max="10"
               step="1"
               defaultValue="1"
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={(e) => {
+                quantity = +e.target.value;
+              }}
             />
           </div>
           <button onClick={addToCartHandler}>Add to Cart</button>

@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { useSelector } from "react-redux";
-import Card from "../components/Card";
+import MainCard from "../components/MainCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import SubHeader from "../components/SubHeader";
 
@@ -51,7 +51,7 @@ const Main = () => {
             <div className={classes.emptyMsg}>No Pizza Found!</div>
           )}
           {data?.map((item) => (
-            <Card
+            <MainCard
               key={item.id}
               id={item.id}
               name={item.name}

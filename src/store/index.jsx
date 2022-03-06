@@ -3,7 +3,10 @@ import {
   ADD_MODAL_CONTENT,
   ADD_TO_CART,
   FETCHED,
+  INCREASE_QUANTITY,
   LOADING,
+  REDUCE_QUANTITY,
+  REMOVE_FROM_CART,
   SORT_PRICE,
   SORT_RATING,
   TOGGLE_CART,
@@ -53,6 +56,33 @@ const mainReducer = (state = initialState, action) => {
     }
     case ADD_TO_CART: {
       state = { ...state, cartList: [...state.cartList, action.payload] };
+      return state;
+    }
+    case REMOVE_FROM_CART: {
+      let updatedCartList = state.cartList.filter(
+        (item) => item.id !== action.payload
+      );
+      state = { ...state, cartList: updatedCartList };
+      return state;
+    }
+    case REDUCE_QUANTITY: {
+      let updatedCartList = state.cartList.map((item) => {
+        if (item.id === action.payload) {
+          item.quantity -= 1;
+        }
+        return item;
+      });
+      state = { ...state, cartList: updatedCartList };
+      return state;
+    }
+    case INCREASE_QUANTITY: {
+      let updatedCartList = state.cartList.map((item) => {
+        if (item.id === action.payload) {
+          item.quantity += 1;
+        }
+        return item;
+      });
+      state = { ...state, cartList: updatedCartList };
       return state;
     }
     default: {
