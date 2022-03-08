@@ -19,43 +19,43 @@ const useStyles = makeStyles({
     flexDirection: "column",
   },
   heading: {
-    fontSize: "30px",
+    fontSize: "3rem",
     fontWeight: "bold",
-    marginBottom: "20px",
+    marginBottom: "2rem",
     textAlign: "center",
     borderBottom: "1px solid black",
-    paddingBottom: "10px",
+    paddingBottom: "1rem",
   },
   bottomWrapper: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "end",
-    marginTop: "20px",
+    marginTop: "2rem",
     "& > button": {
-      padding: "10px 30px",
-      borderRadius: "15px",
+      padding: "1rem 3rem",
+      borderRadius: "1.5rem",
       border: "none",
       backgroundColor: "green",
       color: "white",
-      fontSize: "18px",
+      fontSize: "1.8rem",
       fontWeight: "bold",
       cursor: "pointer",
     },
   },
   quantityWrapper: {
     "& > input": {
-      marginTop: "15px",
-      borderRadius: "15px",
+      marginTop: "1.5rem",
+      borderRadius: "1.5rem",
       border: "1px solid black",
-      padding: "7px 7px 7px 13px",
+      padding: "0.7rem 0.7rem 0.7rem 1.3rem",
       outline: "none",
-      width: "50px",
-      fontSize: "18px",
+      width: "5rem",
+      fontSize: "1.8rem",
       textAlign: "center",
     },
   },
   quantity: {
-    fontSize: "20px",
+    fontSize: "2rem",
   },
 });
 
@@ -118,7 +118,7 @@ const ModalContent = (props) => {
         <FormControl>
           <FormLabel
             id="demo-row-radio-buttons-group-label"
-            sx={{ color: "black", fontSize: "20px" }}
+            sx={{ color: "black", fontSize: "2rem" }}
           >
             Choose size :
           </FormLabel>
@@ -134,7 +134,7 @@ const ModalContent = (props) => {
                 key={index}
                 value={item.size}
                 control={<Radio />}
-                label={item.size}
+                label={<span style={{ fontSize: "1.6rem" }}>{item.size}</span>}
               />
             ))}
           </RadioGroup>
@@ -145,8 +145,8 @@ const ModalContent = (props) => {
             component="legend"
             sx={{
               color: "black",
-              marginTop: "20px",
-              fontSize: "20px",
+              marginTop: "2rem",
+              fontSize: "2rem",
             }}
           >
             Choose topping(s) :
@@ -158,7 +158,7 @@ const ModalContent = (props) => {
                 control={
                   <Checkbox onChange={toppingsChangeHandler} name={item.name} />
                 }
-                label={item.name}
+                label={<span style={{ fontSize: "1.6rem" }}>{item.name}</span>}
               />
             ))}
           </FormGroup>

@@ -6,8 +6,8 @@ import { sortPrice, sortRating, toggleVeg } from "../actions";
 
 const useStyles = makeStyles({
   root: {
-    height: "100px",
-    padding: "20px 100px",
+    height: "10rem",
+    padding: "1% 10%",
     backgroundColor: "#f2f2f280",
     boxSizing: "border-box",
     display: "flex",
@@ -15,15 +15,15 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   sortWrapper: {
-    fontSize: "20px",
+    fontSize: "2rem",
     display: "flex",
     alignItems: "center",
   },
   chip: {
-    marginLeft: "15px",
+    marginLeft: "1.5rem",
     border: "1px solid green",
-    borderRadius: "25px",
-    padding: "8px 20px",
+    borderRadius: "2.5rem",
+    padding: "0.8rem 2rem",
     cursor: "pointer",
   },
   chipSelected: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     color: "white",
   },
   veg: {
-    fontSize: "20px",
+    fontSize: "2rem",
   },
 });
 const SubHeader = () => {
@@ -68,8 +68,9 @@ const SubHeader = () => {
         </span>
       </div>
       <FormControlLabel
+        sx={{ m: "0" }}
         control={<Switch onChange={vegClickHandler} color="success" />}
-        label={<Typography style={{ fontSize: "20px" }}>Veg</Typography>}
+        label={<Typography style={{ fontSize: "2rem" }}>Veg</Typography>}
       />
     </div>
   );

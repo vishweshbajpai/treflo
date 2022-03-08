@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "84px",
-    padding: "20px 100px",
+    minHeight: "8.4rem",
+    padding: "1% 10%",
     backgroundColor: "white",
     display: "flex",
     justifyContent: "space-between",
@@ -18,34 +18,34 @@ const useStyles = makeStyles({
   header: {
     color: "black",
     fontWeight: "bold",
-    fontSize: "36px",
+    fontSize: "3.6rem",
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
     "& > img": {
-      height: "50px",
-      width: "50px",
-      marginRight: "8px",
+      height: "5rem",
+      width: "5rem",
+      marginRight: "0.8rem",
     },
   },
   cart: {
-    fontSize: "24px",
+    fontSize: "2.4rem",
     margin: "auto 0",
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    padding: "8px 10px",
-    borderRadius: "10px",
+    borderRadius: "1rem",
     textDecoration: "none",
     color: "black",
+    padding: "1rem",
     "&:hover": {
       backgroundColor: "#f2f2f2",
     },
   },
   cartIcon: {
-    height: "25px",
-    width: "25px",
-    marginRight: "10px",
+    height: "2.5rem",
+    width: "2.5rem",
+    marginRight: "1rem",
   },
 });
 

@@ -4,7 +4,7 @@ import React from "react";
 const LoadingSpinner = () => {
   return (
     <>
-      <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ textAlign: "center", backgroundColor: "#f2f2f280" }}>
         <CircularProgress />
       </Box>
     </>

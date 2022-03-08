@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     width: "90%",
     backgroundColor: "white",
     padding: "2rem",
-    borderRadius: "14px",
+    borderRadius: "1.4rem",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)",
     zIndex: "30",
     animation: "slide-down 300ms ease-out forwards",
@@ -27,8 +27,8 @@ const useStyles = makeStyles({
 
   "@media (min-width: 768px)": {
     modal: {
-      width: "30rem",
-      left: "calc(50% - 15rem)",
+      width: "40rem",
+      left: "calc(50% - 20rem)",
     },
   },
 

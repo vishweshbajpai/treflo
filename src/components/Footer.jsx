@@ -7,8 +7,8 @@ import TwitterImg from "../assets/TwitterImg.png";
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "150px",
-    padding: "50px 100px",
+    minHeight: "15rem",
+    padding: "5% 7%",
     backgroundColor: "#10101012",
     display: "flex",
     justifyContent: "space-between",
@@ -16,22 +16,23 @@ const useStyles = makeStyles({
   },
   footer: {
     color: "black",
-    fontSize: "30px",
+    fontSize: "3rem",
     fontWeight: "bold",
     display: "flex",
     alignItems: "center",
     "& > img": {
-      height: "50px",
-      width: "50px",
-      marginRight: "8px",
+      height: "5rem",
+      width: "5rem",
+      marginRight: "0.8rem",
     },
   },
   footerList: {
-    marginTop: "50px",
+    marginTop: "5rem",
+    display: "flex",
     "& > span": {
-      fontSize: "16px",
+      fontSize: "1.6rem",
       color: "gray",
-      marginRight: "40px",
+      marginRight: "4rem",
       cursor: "pointer",
     },
   },
@@ -41,10 +42,11 @@ const useStyles = makeStyles({
     justifyContent: "end",
   },
   socialLinks: {
+    display: "flex",
     "& > img": {
-      marginLeft: "20px",
-      height: "30px",
-      width: "30px",
+      marginLeft: "2rem",
+      height: "3rem",
+      width: "3rem",
       cursor: "pointer",
     },
   },

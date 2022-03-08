@@ -8,8 +8,8 @@ import { removeFromCart } from "../actions";
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "500px",
-    padding: "10px 100px 50px 100px",
+    minHeight: "calc(100vh - 18rem)",
+    padding: "1% 10%",
     boxSizing: "border-box",
     backgroundColor: "#f2f2f280",
     display: "flex",
@@ -19,18 +19,24 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    margin: "auto 0",
     "& > img": {
-      height: "300px",
-      width: "300px",
+      height: "30rem",
+      width: "30rem",
     },
     "& > div": {
-      marginTop: "20px",
-      fontSize: "40px",
+      marginTop: "2rem",
+      fontSize: "4rem",
     },
   },
   total: {
-    fontSize: "30px",
+    fontSize: "3rem",
     textAlign: "right",
+  },
+  "@media (max-width: 480px)": {
+    root: {
+      padding: "1% 5% 7% 5%",
+    },
   },
 });
 

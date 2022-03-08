@@ -7,20 +7,22 @@ import SubHeader from "../components/SubHeader";
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "1000px",
-    padding: "10px 100px 50px 100px",
+    minHeight: "calc(100vh - 41rem)",
+    padding: "1% 10% 7% 10%",
     boxSizing: "border-box",
     backgroundColor: "#f2f2f280",
-  },
-  listWrapper: {
     display: "flex",
     flexWrap: "wrap",
-    rowGap: "50px",
-    justifyContent: "space-between",
+    rowGap: "3em",
   },
   emptyMsg: {
-    margin: "50px auto",
-    fontSize: "20px",
+    margin: "5rem auto",
+    fontSize: "2rem",
+  },
+  "@media (max-width: 480px)": {
+    root: {
+      padding: "1% 5% 7% 5%",
+    },
   },
 });
 const Main = () => {
@@ -44,27 +46,25 @@ const Main = () => {
   return (
     <>
       <SubHeader />
+      {isLoading && <LoadingSpinner />}
       <div className={classes.root}>
-        {isLoading && <LoadingSpinner />}
-        <div className={classes.listWrapper}>
-          {data?.length === 0 && !isLoading && (
-            <div className={classes.emptyMsg}>No Pizza Found!</div>
-          )}
-          {data?.map((item) => (
-            <MainCard
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              description={item.description}
-              isVeg={item.isVeg}
-              rating={item.rating}
-              price={item.price}
-              img_url={item.img_url}
-              size={item.size}
-              toppings={item.toppings}
-            />
-          ))}
-        </div>
+        {data?.length === 0 && !isLoading && (
+          <div className={classes.emptyMsg}>No Pizza Found!</div>
+        )}
+        {data?.map((item) => (
+          <MainCard
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            description={item.description}
+            isVeg={item.isVeg}
+            rating={item.rating}
+            price={item.price}
+            img_url={item.img_url}
+            size={item.size}
+            toppings={item.toppings}
+          />
+        ))}
       </div>
     </>
   );
