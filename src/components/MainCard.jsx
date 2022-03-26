@@ -108,7 +108,8 @@ const useStyles = makeStyles({
       height: "40rem",
     },
     price: {
-      top: "14.5rem",
+      top: "15rem",
+      left: "1rem",
     },
   },
 });

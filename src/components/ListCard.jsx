@@ -42,6 +42,10 @@ const useStyles = makeStyles({
     flexDirection: "column",
     flex: "1",
     padding: "1rem",
+    overflow: "auto",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
   name: {
     fontWeight: "bold",
@@ -80,7 +84,7 @@ const useStyles = makeStyles({
   marginWrapper: {
     marginLeft: "0.5rem",
     "& > span": {
-      padding: "0 1rem",
+      padding: "0 0.7rem",
       fontWeight: "bold",
       fontSize: "2rem",
       backgroundColor: "#e62f42",
@@ -92,7 +96,7 @@ const useStyles = makeStyles({
   },
   "@media (max-width: 480px)": {
     root: {
-      height: "28rem",
+      height: "25rem",
     },
     imageWrapper: {
       width: "40%",
@@ -158,7 +162,9 @@ const ListCard = ({
           <div className={classes.marginWrapper}>
             <span onClick={addClickHandler}>+</span>
             {quantity}
-            <span onClick={reduceClickHandler}>-</span>
+            <span onClick={reduceClickHandler} style={{ padding: "0 0.9rem" }}>
+              -
+            </span>
           </div>
         </div>
         <div className={classes.size}>

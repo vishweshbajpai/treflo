@@ -8,7 +8,7 @@ import SubHeader from "../components/SubHeader";
 const useStyles = makeStyles({
   root: {
     minHeight: "calc(100vh - 41rem)",
-    padding: "1% 10% 7% 10%",
+    padding: "1% 7% 7% 7%",
     boxSizing: "border-box",
     backgroundColor: "#f2f2f280",
     display: "flex",
